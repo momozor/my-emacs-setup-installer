@@ -3,7 +3,7 @@
 (message "")
 (message "Launching..")
 (message "")
-(defconst emacs-root "~/.owo-emacs")
+(defconst emacs-root "~/.emacs")
 (message "EMACS INIT ROOT: %s" emacs-root)
 (message "")
 
