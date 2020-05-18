@@ -15,6 +15,7 @@ There are two things you can do about this warning:
   )
 (package-initialize)
 
+
 ;;; ELISP LANGUAGE EXTENSIONS
 
 ;; enable lexical binding
@@ -49,7 +50,7 @@ There are two things you can do about this warning:
 ;; highlight characters beyond than 80th column
 ;; for easily readability of the text
 (setq-default whitespace-line-column
-              80
+              100
               whitespace-style
               '(face lines-tail))
 (global-whitespace-mode 1)
@@ -78,17 +79,15 @@ There are two things you can do about this warning:
 ;; kill buffer & window
 (global-set-key (kbd "S-C-k") 'kill-buffer-and-window)
 
-(load-file "/home/momozor/quicklisp/local-projects/non_lisp/elisp/ada-alire/ada-alire.el")
-
 ;; enable or disable selected buffer
 (global-set-key (kbd "S-C-r") 'read-only-mode)
 
                                         ;(smex-initialize)
                                         ;(smex-major-mode-commands)
 
-
-;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
-;;Replace "sbcl" with the path to your implementation
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; Replace "sbcl" with the path to your implementation
+(setq inferior-lisp-program "sbcl")
 ;;(setq inferior-lisp-program "sbcl")
 
 (require 'smex)
