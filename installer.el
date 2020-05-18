@@ -3,12 +3,13 @@
 (message "")
 (message "Launching..")
 (message "")
-(defconst emacs-root "~/.ewe-emacs")
+(defconst emacs-root "~/.emacs")
 (message "EMACS ROOT: %s" emacs-root)
 (message "")
 
 (find-file "./setup.txt")
 (write-file emacs-root)
+(kill-buffer)
 (load-file emacs-root)
 (package-refresh-contents)
 
@@ -30,4 +31,5 @@
   (package-install i))
 
 (find-file "./setup2.txt")
-(append-to-file 17 106 emacs-root)
+(write-file emacs-root)
+(kill-buffer)
