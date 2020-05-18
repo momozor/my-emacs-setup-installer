@@ -3,16 +3,27 @@
 (message "")
 (message "Launching..")
 (message "")
-(defconst emacs-root "~/.emacs")
-(message "EMACS ROOT: %s" emacs-root)
+(defconst emacs-root "~/.owo-emacs")
+(message "EMACS INIT ROOT: %s" emacs-root)
 (message "")
 
 (find-file "./setup.txt")
 (write-file emacs-root)
 (kill-buffer)
+
+(message "")
+(message "Loading melpa list..")
+(message "")
 (load-file emacs-root)
+
+(message "")
+(message "Refreshing package lists from (M)ELPA..")
+(message "")
 (package-refresh-contents)
 
+(message "")
+(message "Installing defined packages..")
+(message "")
 ;; (M)ELPA package list
 ;; install packages from here
 (setq package-list
@@ -28,8 +39,14 @@
         elixir-mode))
 
 (dolist (i package-list)
+  (message "")
+  (message "Installing %s" i)
   (package-install i))
 
 (find-file "./setup2.txt")
 (write-file emacs-root)
 (kill-buffer)
+
+(message "")
+(message "done")
+(message "")
