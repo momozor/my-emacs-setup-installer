@@ -36,7 +36,7 @@
         auto-complete
         aggressive-indent
         company
-        elixir-mode))
+        monokai-theme))
 
 (dolist (i package-list)
   (message "")
