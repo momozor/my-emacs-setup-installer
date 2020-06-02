@@ -36,6 +36,8 @@
         auto-complete
         aggressive-indent
         company
+        vlf
+        helm-swoop
         monokai-theme))
 
 (dolist (i package-list)
