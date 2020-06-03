@@ -27,18 +27,19 @@
 ;; (M)ELPA package list
 ;; install packages from here
 (setq package-list
-      '(smex
-        nyan-mode
-        neotree
+      '(smex ; more automatic M-X auto-complete
+        nyan-mode ; who doesn't love nyan cat for file position indicator
+        neotree ; simple and working project tree view
         python-mode
         php-mode
-        slime
-        auto-complete
-        aggressive-indent
-        company
-        vlf
-        helm-swoop
-        monokai-theme))
+        slime ; common lisp REPL on steroid
+        cider ; clojure REPL on steroid
+        auto-complete ; basic auto-complete
+        aggressive-indent ; make indentation automatic, forcefully
+        company ; is here if I want to use for alternative auto-complete
+        vlf ; for opening extremely huge file without fail
+        helm-swoop ; simple project-wide search-and-replace
+        monokai-theme ; good ol rad theme))
 
 (dolist (i package-list)
   (message "")
