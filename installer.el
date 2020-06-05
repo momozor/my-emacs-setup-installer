@@ -39,6 +39,8 @@
         company ; is here if I want to use for alternative auto-complete
         vlf ; for opening extremely huge file without fail
         helm-swoop ; simple project-wide search-and-replace
+        paredit ; flexible parentheses manipulation for Lisps
+        magit ; useful interactivity with git
         monokai-theme ; good ol rad theme))
 
 (dolist (i package-list)
