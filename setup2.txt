@@ -99,5 +99,5 @@ There are two things you can do about this warning:
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (nyan-mode)
-(global-aggressive-indent-mode 1)
+;;(global-aggressive-indent-mode 1)
 (setq paredit-mode t)

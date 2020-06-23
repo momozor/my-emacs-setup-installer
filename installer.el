@@ -35,7 +35,7 @@
         slime ; common lisp REPL on steroid
         cider ; clojure REPL on steroid
         auto-complete ; basic auto-complete
-        aggressive-indent ; make indentation automatic, forcefully
+        ;aggressive-indent ; make indentation automatic, forcefully
         company ; is here if I want to use for alternative auto-complete
         vlf ; for opening extremely huge file without fail
         helm-swoop ; simple project-wide search-and-replace
