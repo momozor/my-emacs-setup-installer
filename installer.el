@@ -31,17 +31,18 @@
         nyan-mode ; who doesn't love nyan cat for file position indicator
         neotree ; simple and working project tree view
         python-mode
-        php-mode
         slime ; common lisp REPL on steroid
+        slime-company
         cider ; clojure REPL on steroid
         auto-complete ; basic auto-complete
-        ;aggressive-indent ; make indentation automatic, forcefully
+        aggressive-indent ; make indentation automatic, forcefully
         company ; is here if I want to use for alternative auto-complete
         vlf ; for opening extremely huge file without fail
         helm-swoop ; simple project-wide search-and-replace
-        paredit ; flexible parentheses manipulation for Lisps
         magit ; useful interactivity with git
-        monokai-theme ; good ol rad theme))
+        monokai-theme ; good ol rad theme
+        rustic ; rust on steroid mode
+        lsp-mode ; lsp server bindings))
 
 (dolist (i package-list)
   (message "")

@@ -18,86 +18,80 @@ There are two things you can do about this warning:
 
 ;;; ELISP LANGUAGE EXTENSIONS
 
-;; enable lexical binding
+;; Enable lexical binding.
 (setq lexical-binding t)
 
 ;;; ELISP config vars
 
 (setq local-projects-path "~/quicklisp/local-projects")
 
-;;; EMACS CONFIGURATIONS
-
-;; disable gnu emacs buffer on startup
+;; Disable Emacs welcome buffer on startup.
 (setq inhibit-startup-message t)
 
-;; don't create backups
+;; Don't create 'backup' files.
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq create-lockfiles nil)
 
-;; set yes or no prompt with answer y/n
+;; Set yes or no prompt with answer y/n.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; pair parentheses and other characters combination.
-;; also highlight parentheses
+;; Pair parentheses and other characters combination.
+;; Also highlight parentheses.
 (electric-pair-mode)
 (show-paren-mode t)
-
-;; Use space instead of tab.
-;; PLEASE USE SPACE OVER TAB :P
-(setq-default indent-tabs-mode nil)
-
-;; highlight characters beyond than 80th column
-;; for easily readability of the text
-(setq-default whitespace-line-column
-              100
-              whitespace-style
-              '(face lines-tail))
 (global-whitespace-mode 1)
 
-;; make line number mode (horizontal)
+;; Use space instead of tab.
+(setq-default indent-tabs-mode nil)
+
+;; Highlight characters beyond than 80th column
+;; for consistency guideline.
+(setq-default whitespace-line-column
+              80
+              whitespace-style
+              '(face lines-tail))
+
+;; Make line number mode (horizontal)
 ;; and column number mode (vertical)
-;; default for every file
+;; default for every file.
 (global-linum-mode t)
 (column-number-mode t)
 (global-auto-complete-mode t)
-
-;;; KEY SHORTCUTS
-
-;; window navigation
-(global-set-key (kbd "C-x u") 'windmove-up)
-(global-set-key (kbd "C-x d") 'windmove-down)
-(global-set-key (kbd "C-x p") 'windmove-left)
-(global-set-key (kbd "C-x n") 'windmove-right)
-
-;; shrink/expand window
-(global-set-key (kbd "S-C-p") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-n") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-u") 'enlarge-window)
-(global-set-key (kbd "S-C-d") 'shrink-window)
-
-;; kill buffer & window
-(global-set-key (kbd "S-C-k") 'kill-buffer-and-window)
-
-;; enable or disable selected buffer
-(global-set-key (kbd "S-C-r") 'read-only-mode)
-
-                                        ;(smex-initialize)
-                                        ;(smex-major-mode-commands)
-
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-;; Replace "sbcl" with the path to your implementation
-(setq inferior-lisp-program "sbcl")
-;;(setq inferior-lisp-program "sbcl")
+(nyan-mode)
 
 (require 'smex)
 (smex-initialize)
 
+(require 'lsp-mode)
+(add-hook 'rust-mode-hook #'lsp)
 
+;;; LITERATURE PROGRAMMING.
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((lisp . t)))
+
+;;; KEY SHORTCUTS
+
+(global-set-key (kbd "C-x u") 'windmove-up)
+(global-set-key (kbd "C-x d") 'windmove-down)
+(global-set-key (kbd "C-x p") 'windmove-left)
+(global-set-key (kbd "C-x n") 'windmove-right)
+(global-set-key (kbd "S-C-p") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-n") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-u") 'enlarge-window)
+(global-set-key (kbd "S-C-d") 'shrink-window)
+(global-set-key (kbd "S-C-k") 'kill-buffer-and-window)
+(global-set-key (kbd "S-C-r") 'read-only-mode)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-(nyan-mode)
-;;(global-aggressive-indent-mode 1)
-(setq paredit-mode t)
+
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;;(load (expand-file-name "~/.roswell/helper.el"))
+;; Replace "sbcl" with the path to your implementation.
+;;(setq inferior-lisp-program "ros -Q run")
+(setq inferior-lisp-program "sbcl")
+(slime-setup '(slime-fancy slime-company))
