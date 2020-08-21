@@ -96,3 +96,11 @@ There are two things you can do about this warning:
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company))
 (load-theme 'material)
+
+(defun terminal ()
+  (interactive)
+  (split-window-below)
+  (windmove-down)
+  (ansi-term "/bin/bash" "Terminal"))
+
+(global-set-key (kbd "C-x t") 'terminal)
