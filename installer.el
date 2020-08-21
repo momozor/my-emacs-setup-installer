@@ -41,8 +41,10 @@
         helm-swoop ; simple project-wide search-and-replace
         magit ; useful interactivity with git
         monokai-theme ; good ol rad theme
+        material-theme ; new ish theme
         rustic ; rust on steroid mode
         lsp-mode ; lsp server bindings))
+	))
 
 (dolist (i package-list)
   (message "")

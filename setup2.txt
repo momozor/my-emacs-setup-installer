@@ -95,3 +95,4 @@ There are two things you can do about this warning:
 ;;(setq inferior-lisp-program "ros -Q run")
 (setq inferior-lisp-program "sbcl")
 (slime-setup '(slime-fancy slime-company))
+(load-theme 'material)
