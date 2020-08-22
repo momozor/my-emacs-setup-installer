@@ -103,4 +103,10 @@ There are two things you can do about this warning:
   (windmove-down)
   (ansi-term "/bin/bash" "Terminal"))
 
+(defun destroy-terminal ()
+  (interactive)
+  (kill-buffer)
+  (delete-window))
+
 (global-set-key (kbd "C-x t") 'terminal)
+(global-set-key (kbd "C-x C-t") 'destroy-terminal)
