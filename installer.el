@@ -42,9 +42,8 @@
         magit ; useful interactivity with git
         monokai-theme ; good ol rad theme
         material-theme ; new ish theme
-        rustic ; rust on steroid mode
-        lsp-mode ; lsp server bindings))
-	))
+        auto-complete ; cool autocomplete
+))
 
 (dolist (i package-list)
   (message "")
