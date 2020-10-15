@@ -33,8 +33,6 @@
         python-mode
         slime ; common lisp REPL on steroid
         slime-company
-        cider ; clojure REPL on steroid
-        auto-complete ; basic auto-complete
         aggressive-indent ; make indentation automatic, forcefully
         company ; is here if I want to use for alternative auto-complete
         vlf ; for opening extremely huge file without fail

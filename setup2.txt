@@ -63,9 +63,6 @@ There are two things you can do about this warning:
 (require 'smex)
 (smex-initialize)
 
-(require 'lsp-mode)
-(add-hook 'rust-mode-hook #'lsp)
-
 ;;; LITERATURE PROGRAMMING.
 (org-babel-do-load-languages
  'org-babel-load-languages
