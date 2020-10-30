@@ -45,6 +45,10 @@ There are two things you can do about this warning:
 ;; Use space instead of tab.
 (setq-default indent-tabs-mode nil)
 
+;; C/C++
+(setq-default c-basic-offset 8)
+(setq-default c-default-style "linux")
+
 ;; Highlight characters beyond than 80th column
 ;; for consistency guideline.
 (setq-default whitespace-line-column
