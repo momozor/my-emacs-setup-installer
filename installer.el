@@ -35,12 +35,14 @@
         slime-company
         aggressive-indent ; make indentation automatic, forcefully
         company ; is here if I want to use for alternative auto-complete
-        vlf ; for opening extremely huge file without fail
+        vlf ; for opening extremely huge file without failing
         helm-swoop ; simple project-wide search-and-replace
         magit ; useful interactivity with git
         monokai-theme ; good ol rad theme
         material-theme ; new ish theme
         auto-complete ; cool autocomplete
+        web-mode ; awesome HTML5 mode
+        meson-mode ; meson build system
 ))
 
 (dolist (i package-list)
