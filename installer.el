@@ -24,15 +24,18 @@
 (message "")
 (message "Installing defined packages..")
 (message "")
+
+;;; Recommended for Emacs 26+.
+;;; Some might not work with less than that version.
 ;; (M)ELPA package list
 ;; install packages from here
 (setq package-list
       '(smex ; more automatic M-X auto-complete
         nyan-mode ; who doesn't love nyan cat for file position indicator
         neotree ; simple and working project tree view
-        python-mode
+        python-mode ; why not?
         slime ; common lisp REPL on steroid
-        slime-company
+        slime-company ; cool autocomplete for SLIME
         aggressive-indent ; make indentation automatic, forcefully
         company ; is here if I want to use for alternative auto-complete
         vlf ; for opening extremely huge file without failing
@@ -43,6 +46,8 @@
         auto-complete ; cool autocomplete
         web-mode ; awesome HTML5 mode
         meson-mode ; meson build system
+        clang-format ; C/C++ auto-formatting (recommends webkit style)
+        lua-mode ; for Lua lang syntax highlighting
 ))
 
 (dolist (i package-list)
@@ -57,3 +62,4 @@
 (message "")
 (message "done")
 (message "")
+
